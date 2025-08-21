@@ -1,0 +1,200 @@
+/* Removed Tailwind directives for plain CSS compatibility */
+
+/* Homestay Design System - Cloud & Sky Theme */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 210 40% 98%;
+    --foreground: 215 20% 25%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 20% 25%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 20% 25%;
+
+    /* Primary - Sky Blue */
+    --primary: 200 85% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 200 90% 85%;
+    --primary-dark: 200 75% 55%;
+
+    /* Secondary - Soft White */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 20% 25%;
+
+    /* Muted colors */
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent - Warm Yellow */
+    --accent: 50 95% 85%;
+    --accent-foreground: 45 25% 30%;
+    --accent-warm: 45 100% 75%;
+
+    /* Cloud theme colors */
+    --cloud: 210 30% 95%;
+    --cloud-soft: 210 40% 98%;
+    --sky-gradient-start: 200 90% 85%;
+    --sky-gradient-end: 210 85% 75%;
+
+    /* Nature colors */
+    --nature-green: 140 60% 70%;
+    --nature-earth: 30 40% 75%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input */
+    --border: 210 30% 88%;
+    --input: 210 30% 92%;
+    --ring: 200 85% 70%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 20% 15%;
+    --foreground: 210 40% 95%;
+
+    --card: 215 20% 17%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 215 20% 17%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 200 85% 75%;
+    --primary-foreground: 215 20% 15%;
+    --primary-light: 200 90% 85%;
+    --primary-dark: 200 75% 60%;
+
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 50 95% 75%;
+    --accent-foreground: 45 25% 25%;
+    --accent-warm: 45 100% 65%;
+
+    --cloud: 215 25% 25%;
+    --cloud-soft: 215 30% 30%;
+
+    --nature-green: 140 60% 60%;
+    --nature-earth: 30 40% 65%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 95%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 200 85% 75%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    border-width: 1px;
+    border-style: solid;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    /* @apply bg-background text-foreground; */
+  }
+}
+
+/* Custom Components & Utilities */
+@layer components {
+  /* Gradient backgrounds */
+  .bg-sky-gradient {
+    background: linear-gradient(135deg, hsl(var(--sky-gradient-start)), hsl(var(--sky-gradient-end)));
+  }
+  
+  .bg-cloud-gradient {
+    background: linear-gradient(180deg, hsl(var(--cloud-soft)), hsl(var(--cloud)));
+  }
+
+  .hover-lift {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    /* @apply transform -translate-y-2 shadow-lg; */
+  }
+
+  /* Text shadows and glows */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* .glow-primary removed: empty ruleset */
+
+  .btn-hero {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .btn-hero:hover {
+    background-color: hsl(var(--primary-dark));
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  .btn-booking {
+    background-color: hsl(var(--accent-warm));
+    color: hsl(var(--accent-foreground));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    /* @apply bg-accent-warm hover:bg-accent text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-md; */
+  }
+  .btn-booking:hover {
+    background-color: hsl(var(--accent));
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  }
+
+  /* Smooth scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+} .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
